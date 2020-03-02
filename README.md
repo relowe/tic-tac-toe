@@ -9,9 +9,9 @@ This is, of course, not ideal.  We will use a backend object to
 control the business logic of the tic tac toe program. This
 application can be thought of as consisting of three layers:
 
-  1.) Model - Backend Business Logic
-  2.) View - The GUI classes
-  3.) Control - Callbacks and main function
+  1. Model - Backend Business Logic
+  2. View - The GUI classes
+  3. Control - Callbacks and main function
 
 In order to make this tutorial an aid in transition from procedural to
 object oriented programming, the View and Control are written in
