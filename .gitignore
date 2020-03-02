@@ -20,3 +20,5 @@
 *.bak
 *.*~
 a.out
+tic-tac-toe.h
+tic-tac-toe.cxx

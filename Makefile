@@ -4,10 +4,16 @@ LDFLAGS=`fltk-config --ldflags`
 CXX=`fltk-config --cxx`
 
 #The Apps
-TARGETS=
+TARGETS=tic-tac-toe
 all: $(TARGETS)
+tic-tac-toe: tic-tac-toe.o main.o control.o
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 #The Ingredients
+main.o: main.cpp tic-tac-toe.h
+control.o: control.cpp control.h
+tic-tac-toe.o: tic-tac-toe.cxx tic-tac-toe.h
+	$(CXX) $(CXXFLAGS) -c -o $@ tic-tac-toe.cxx
 
 #FLUID ingredient builds
 %.h %.cxx: %.fl
@@ -15,4 +21,4 @@ all: $(TARGETS)
 
 # utility
 clean:
-	rm -f *.o $(TARGETS)
+	rm -f *.o $(TARGETS) tic-tac-toe.cxx tic-tac-toe.h

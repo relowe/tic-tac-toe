@@ -1,0 +1,51 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cxx}
+Function {make_window()} {open
+} {
+  Fl_Window main_window {
+    label {Tic-Tac-Toe} open
+    private xywh {553 276 300 325} type Double visible
+  } {
+    Fl_Output message {
+      xywh {0 0 300 25} labeltype NO_LABEL align 0
+    }
+    Fl_Button btn0 {
+      user_data 0 user_data_type long
+      xywh {0 25 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn1 {
+      user_data 1 user_data_type long
+      xywh {100 25 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn2 {
+      user_data 2 user_data_type long
+      xywh {200 25 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn3 {
+      user_data 3 user_data_type long
+      xywh {0 125 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn4 {
+      user_data 4 user_data_type long
+      xywh {100 125 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn5 {
+      user_data 5 user_data_type long
+      xywh {200 125 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn6 {
+      user_data 6 user_data_type long
+      xywh {0 225 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn7 {
+      user_data 7 user_data_type long
+      xywh {100 225 100 100} labelfont 1 labelsize 84
+    }
+    Fl_Button btn8 {
+      user_data 8 user_data_type long
+      xywh {200 225 100 100} labelfont 1 labelsize 84
+    }
+  }
+}
