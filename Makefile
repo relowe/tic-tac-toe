@@ -1,12 +1,12 @@
 # Environment
-CXXFLAGS=`fltk-config --cxxflags` --std=c++11 -g
+CXXFLAGS=`fltk-config --cxxflags` --std=c++11 
 LDFLAGS=`fltk-config --ldflags`
 CXX=`fltk-config --cxx`
 
 #The Apps
 TARGETS=tic-tac-toe boardtest
 all: $(TARGETS)
-tic-tac-toe: tic-tac-toe.o main.o control.o
+tic-tac-toe: tic-tac-toe.o main.o control.o board.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 boardtest: boardtest.cpp board.h board.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)

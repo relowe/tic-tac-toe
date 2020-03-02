@@ -17,9 +17,13 @@
 #include <Fl/Fl_Button.H>
 #include "tic-tac-toe.h"
 #include "control.h"
+#include "board.h"
 
 // An array of button pointers for easy access
 static Fl_Button* cell[9];
+
+// The state of the Tic-Tac-Toe board
+static Tic_Tac_Toe_Board board;
 
 
 // The square callback function (which is only used in the controller)
@@ -28,6 +32,27 @@ static void square_callback(Fl_Button *button)
     //make the player move
     button->label("X");
     button->callback((Fl_Callback*)nullptr);
+
+    //log the player move 
+    board.move(Tic_Tac_Toe_Board::X, (int)((long)button->user_data()));
+
+    //make the computer move in the backend
+    int i= board.best_move(Tic_Tac_Toe_Board::O);
+    board.move(Tic_Tac_Toe_Board::O, i);
+
+    //make the computer move in the GUI
+    cell[i]->label("O");
+    cell[i]->callback((Fl_Callback*) nullptr);
+
+    //log winners
+    Tic_Tac_Toe_Board::Player w = board.winner();
+    if(w == Tic_Tac_Toe_Board::O) {
+        message->value("I Win!");
+    } else if(w == Tic_Tac_Toe_Board::X) {
+        message->value("You Win!");
+    } else if(w == Tic_Tac_Toe_Board::D) {
+        message->value("Draw");
+    }
 }
 
 
