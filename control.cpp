@@ -38,11 +38,13 @@ static void square_callback(Fl_Button *button)
 
     //make the computer move in the backend
     int i= board.best_move(Tic_Tac_Toe_Board::O);
-    board.move(Tic_Tac_Toe_Board::O, i);
+    if(i >= 0) {
+        board.move(Tic_Tac_Toe_Board::O, i);
 
-    //make the computer move in the GUI
-    cell[i]->label("O");
-    cell[i]->callback((Fl_Callback*) nullptr);
+        //make the computer move in the GUI
+        cell[i]->label("O");
+        cell[i]->callback((Fl_Callback*) nullptr);
+    }
 
     //log winners
     Tic_Tac_Toe_Board::Player w = board.winner();
