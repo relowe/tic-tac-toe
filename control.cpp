@@ -29,6 +29,11 @@ static Tic_Tac_Toe_Board board;
 // The square callback function (which is only used in the controller)
 static void square_callback(Fl_Button *button)
 {
+    //don't move if theres a winner!
+    if(board.winner() != Tic_Tac_Toe_Board::N) {
+        return;
+    }
+
     //make the player move
     button->label("X");
     button->callback((Fl_Callback*)nullptr);
